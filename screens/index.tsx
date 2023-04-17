@@ -1,52 +1,26 @@
+import React from 'react';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
-import { StyleSheet, Image } from 'react-native';
-import { Text, View } from '../components/Themed';
-
-// Main Function - Needs to be exported so that the react-navigation can define and read the page
-export default function IndexPage() {
-
-  // Anything in return is content displayed on the page
+export default function IndexScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Image style  = {styles.image
-      } source={require('../assets//thumbnail_SWNG-white.png')} />
-      <Text> Index Page</Text>
-</View>
+      <Text style={styles.title}>Welcome to MyApp!</Text>
+      <TouchableOpacity style={styles.button} onPress={() => alert('Button pressed!')}>
+        <Text style={styles.buttonText}>Click me!</Text>
+      </TouchableOpacity>
+    </View>
   );
-
 }
 
-// More Styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-  },
-  image: {
-    marginTop: '5%',
-    marginBottom: '5%',
-    resizeMode: 'contain',
-    height: '20%',
-    width: '80%'
-    
+    justifyContent: 'center',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '50%',
-  },
-  input: {
-    width: '80%',
-    height: 50,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    paddingHorizontal: 10,
     marginBottom: 20,
   },
   button: {
